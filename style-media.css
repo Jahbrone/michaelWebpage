@@ -1,0 +1,118 @@
+/*----smart-phone hamburger------*/
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  .hamburger.active {
+    transform: rotate(180deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-bar {
+    margin: 1px auto;
+    justify-content: center;
+  }
+  .nav-menu {
+    position: fixed;
+    top: -100%;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.9s ease;
+  }
+  .nav-item,
+  .nav-item a {
+    margin: 5px;
+  }
+
+  .nav-menu.active {
+    position: absolute;
+    left: 0;
+    top: 144px;
+  }
+  .photo-small {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .media {
+    margin: 0.5rem;
+  }
+  iframe {
+    height: 100%;
+  }
+  .media-scroller {
+    grid-auto-columns: 50%;
+    height: 50%;
+  }
+}
+@media (min-width: 900px) {
+  .nav-item,
+  .nav-item a {
+    margin: 5px;
+    font-size: 1.3rem;
+  }
+  /*------------- front page--------------*/
+
+  .bio {
+    display: flex;
+    grid-template-columns: 1fr, 1fr;
+    margin: 2rem;
+    grid-gap: 1rem;
+    height: 50vh;
+  }
+  .blurb {
+    border: 3px solid rgb(131, 131, 131);
+    width: 50%;
+  }
+  .photo-small {
+    background: url(/mellowToneMusic/img/michael-right.jpg);
+    background-size: cover;
+    width: 50%;
+  }
+  .photo-big {
+    display: none;
+  }
+  /* ------------contact form-------- */
+  #contact-form {
+    width: 50%;
+    margin: auto;
+    opacity: 0.9;
+    color: black;
+  }
+  .contact-body {
+    background: url(/mellowToneMusic/img/laneway-close.jpg);
+    background-size: cover;
+  }
+  .contact-body::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: #fcedd7;
+    background-position: 50% 0;
+  }
+  #message {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+}

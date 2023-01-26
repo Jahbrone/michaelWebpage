@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Cinzel", serif;
+  --primary-colour: #ffbd59;
+}
+body {
+  background-color: rgb(252, 237, 215);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*------------HEADER----------------------*/
+header {
+  background-color: black;
+  z-index: 5;
+}
+.logo {
+  display: none;
+}
+.logo-phone {
+  display: block;
+}
+.nav-bar {
+  height: 145px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 5;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  background-color: black;
+  color: var(--primary-colour);
+}
+
+.nav-item a {
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+.nav-item a:hover {
+  color: #ffbd59;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-item a {
+  color: #fdf7ef;
+}
+.bar {
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #ffbd59d3;
+  border-radius: 3px;
+}
+
+/*------------FRONT PAGE------------------*/
+
+.frontpage {
+  min-height: 100vh;
+}
+.bio-container {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+.line {
+  margin: 0.5rem auto;
+  height: 2px;
+  width: 90%;
+  background-color: var(--primary-colour);
+}
+h1 {
+  display: none;
+}
+.bio {
+  margin: 0.5rem auto;
+  width: 90%;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.blurb {
+  margin: 2rem 0;
+  font-family: "Roboto Serif", serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.photo-big {
+  margin-bottom: 1rem;
+}
+
+/*-------------------MUSIC-----------------*/
+.media {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.media-scroller {
+  margin-top: 2rem;
+  gap: 0.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 71%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+.spotify-sm {
+  margin-top: 2rem;
+}
+.spotify-lg {
+  display: none;
+}
+
+/* -----CONTACT-FORM----------- */
+#contact-form {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+#contact-form label {
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: block;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+/* #message {
+  height: 150px;
+} */
+
+#contact-form input[type="submit"] {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: "Cinzel", serif;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+#contact-form input[type="submit"]:hover {
+  background-color: #000000bb;
+}
+
+/* -------Gig Guide---------- */
+.gig-guide {
+  margin: auto;
+  opacity: 0.9;
+  height: 70vh;
+  width: 100%;
+  border: 5px solid #fcedd7;
+}
+
+/*------------FOOTER----------------------*/
+footer {
+  display: block;
+  justify-content: space-between;
+  background-color: #ffbd59;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: auto;
+  z-index: 3;
+  height: 120px;
+}
+.social-links {
+  padding: 1rem;
+}
+.social-links a {
+  margin: 0 0.5rem;
+  color: black;
+}
+.copyright {
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+/* -------------------------------- */
+/*  */
+/*  */
+/*  */
+/* ----------MEDIA QUERIES-------- */
+
+/*----smartphone------*/
+@media (max-width: 767px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  .hamburger.active {
+    transform: rotate(180deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .nav-bar {
+    margin: 1px auto;
+    justify-content: center;
+  }
+  .nav-menu {
+    position: fixed;
+    top: -100%;
+    gap: 0;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    transition: 0.9s ease;
+  }
+
+  .nav-item,
+  .nav-item a {
+    margin: 5px;
+  }
+
+  .nav-menu.active {
+    position: absolute;
+    left: 0;
+    top: 144px;
+  }
+  .social-links-nav {
+    margin: 0.5rem;
+  }
+  .social-links-nav a {
+    color: #ffbd59;
+    padding: 1rem;
+  }
+  .photo-small {
+    display: none;
+  }
+}
+/*  */
+/*  */
+/*  */
+/*------------Tablet------------------*/
+
+@media (min-width: 768px) {
+  .social-links-nav {
+    display: none;
+  }
+  .logo {
+    display: block;
+  }
+  .logo-phone {
+    display: none;
+  }
+  .social-links-nav {
+    display: none;
+  }
+  /*----Front Page-----*/
+  .heading {
+    display: inline-block;
+    margin: 3rem;
+    font-size: 2.5rem;
+    opacity: 0.99;
+    border-bottom: 4px solid #ffbd59;
+  }
+  .blurb {
+    width: 70%;
+    margin: 3rem auto;
+    opacity: 0.99;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .front-page-body {
+    background: url(/img/laneway-bw.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .front-page-body::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: #fcedd7;
+    background-position: 50% 0;
+  }
+  .photo-big {
+    display: none;
+  }
+
+  /*-----MUSIC------- */
+  .media {
+    margin: 0.5rem;
+  }
+  .media-element {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 56%;
+  }
+  .media-element > iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .media-scroller {
+    grid-auto-columns: 40%;
+  }
+  .spotify-sm {
+    display: none;
+  }
+  .spotify-lg {
+    margin: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
+  .spotify-lg > iframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* ------Contact Form------ */
+  #contact-form {
+    width: 70%;
+    margin: auto;
+    opacity: 0.9;
+    color: black;
+  }
+  .contact-body {
+    background: url(img/guitars-bg.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .contact-body::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: #fcedd7;
+    background-position: 50% 0;
+  }
+  #message {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+}
+/*  */
+/*  */
+/*  */
+/* ------------------Laptop/PC--------------- */
+@media (min-width: 1200px) {
+  .nav-item,
+  .nav-item a {
+    margin: 0.7rem;
+    font-size: 1.5rem;
+  }
+
+  #contact-form {
+    width: 50%;
+  }
+}
