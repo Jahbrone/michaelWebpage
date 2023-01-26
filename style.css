@@ -298,7 +298,7 @@ footer {
     font-weight: 600;
   }
   .front-page-body {
-    background: url(/img/laneway-bw.jpg);
+    background: url(img/laneway-bw.jpg);
     background-size: cover;
     background-position: center;
   }
